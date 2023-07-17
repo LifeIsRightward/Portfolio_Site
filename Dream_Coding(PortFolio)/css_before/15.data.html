@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Attributes</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        margin-bottom: 50px;
+      }
+
+      div[data-display-name='dream']{
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <img src="/images/profile.png" alt="대체 텍스트"/> -->
+    <!-- alt는 이미지 경로가 보여지지않을때, 대체해서 보여주는거임 -->
+    <!-- 우리가 자체적으로 이 태그에는 이 데이터값을 저장하고 싶다! 할때 쓰는게 data임. -->
+    <!-- 사용 방식은 data-"원하는 속성의 키"="값" -->
+    <!-- data-"사용할 데이터 변수이름" = "값" 이런식으로 사용하면됨. -->
+    <div data-index = "1" data-display-name = "dream">드림!!</div>
+    <div data-index = "2" data-display-name = "coding"></div>
+    <span data-index= "1" data-display-name= "dream">드림!!</span>
+    
+    <script>
+        const dream = document.querySelector('div[data-display-name="dream"]');
+        console.log(dream.dataset);
+        console.log(dream.dataset.displayName);
+    </script>
+  </body>
+</html>

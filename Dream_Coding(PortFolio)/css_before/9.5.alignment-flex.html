@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex box</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: grey;
+        display: flex; 
+        /* 플렉스 컨테이너인거지 얘가(부모니까) 당연히 선언도 부모가 선언해줘야 컨테이너 아래에있는 플렉스 박스들. 즉, 자식들이 플렉스 박스라고 정의되는거임 ㅇㅇ */ 
+        /* 그니까 너는 인제 플렉스 박스야. 라고 말해주는거임 */
+        justify-content: center; 
+        /* 기준축 정렬 -> 기준축은 디폴트가 row. 만약 flex-direction: column; 을 주게된다면 플렉스박스의 기준축이 수직이됨. */
+        /* 일단 지금은 아무런 변경사항이 없으니 ,justify-content의 속성은 수평정렬임(지금은) */
+        align-items: center;
+        /* 기준축의 반대 정렬(반대축) -> 지금은 수직인거지. 기준축이 수평이니까 지금은 ㅇㅇ 수직정렬(지금은) */
+      }
+
+      .inner {
+        width: 80px;
+        height: 80px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex box</h1>
+    <div class="box">
+      <div class="inner"></div>
+    </div>
+  </body>
+</html>

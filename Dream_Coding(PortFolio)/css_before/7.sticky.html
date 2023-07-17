@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position: Sticky</title>
+    <style>
+      .container {
+        margin: 200px;
+        padding: 10px;
+        background-color: darkgray;
+      }
+
+      .box {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        background-color: chocolate;
+      }
+
+      .box2 {
+        background-color: darkblue;
+        position: sticky;
+        /* 원래 문서안에 들어있으면서 요소가 문서 밖으로 나갈때는 그 자리에 그대로 고정시킬 수 있는 옵션. -> position: sticky; */
+        top: 20px;
+        /* sticky라는 옵션을 사용할 때는 꼭 어느 기준으로 고정할건지를 명시해야함. 만약 고정할 위치를 명시하지않으면(설정하지 않으면) 어디에 붙어있어야할지 모르기때문에 적용되지 않음. */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+      <div class="box box4"></div>
+      <div class="box box5"></div>
+      <div class="box box6"></div>
+      <div class="box box7"></div>
+      <div class="box box8"></div>
+      <div class="box box9"></div>
+      <div class="box box10"></div>  
+    </div>
+  </body>
+</html>
