@@ -28,6 +28,7 @@
 
 body{
     font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
 }
 
 h1, h2, h3, p, ul{
@@ -52,4 +53,53 @@ button{
 
 button:focus{
     outline: 1px solid var(--color-accent);
+}
+
+/* Header */
+.header{
+    background-color: #fd6413;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    /* flex에서 기준축(지금은 수평)에 대한 정렬 속성값은 정렬하는 방식에 따라 상이함. */
+    align-items: center;
+    /* flex에서 기준축의 반대축(지금에서 반대축은 수직)에 대한 정렬 속성값은 정렬하는 방식에 따라 상이함. */
+}
+
+.header__logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* flex 박스 안에들어있는 자식들간의 여백(gap)을 관리*/
+}
+
+.header__logo__img{
+    width: 36px;
+    height: 36px;
+}
+
+.header__logo__title{
+    font-size: 1.8rem;
+    /* rem은 상대적인 유닛. 현재 브라우저에 설정되어있는 폰트 사이즈에 1.8배임 */
+}
+
+.header__menu{
+    display: flex;
+    gap: 4px;
+}
+
+.header__menu__item{
+    padding: 8px 16px;
+}
+
+.header__menu__item:hover{
+    border-bottom: 2px solid var(--color-accent);
+}
+/* 클래스 두개를 선택하려면(같은 태그 안에서) 붙혀서 써야함. */
+.header__menu__item.active{
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
 }
