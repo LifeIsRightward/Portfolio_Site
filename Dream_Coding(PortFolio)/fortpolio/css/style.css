@@ -1,0 +1,55 @@
+/* Global */
+:root{
+    /* App Colors */
+
+    /* 색깔보다 한 단계 더 추상적으로 사용하는 색깔들인거암. 웹의 전반적인 색깔을 담당하는
+    primary, 강조할때 사용하는 accent, 그리고 텍스트의 색깔인 text까지 이렇게 내가 CSS내에서
+    사용하는 색깔조차도 나중에 변수로 만들어서 사용가능하다는것이다. */
+    --color-primary: var(--color-black);
+    --color-primary-variant: var(--color-gray);
+    /* 주로 사용하는 프라이머리 색상에 대한 변형을 하나 더 정의.(프라이머리 하나만 사용하면 밋밋하니까~) */
+    --color-accent: var(--color-blue);
+    --color-accent-variant: var(--color-orange);
+    /* 얘도 같은 의미에서 베리언트를 설정해줌. 액센트 색깔 하나만 사용하면 밋밋하니까 ㅇㅇ */
+    --color-text: var(--color-white);
+    
+    /* Colors */
+    --color-white: #ffffff;
+    --color-black: #050a13;
+    --color-blue: #03e8f9;
+    --color-orange: #fd6413;
+    --color-gray: #1b1e26;
+}
+
+*{
+    box-sizing: border-box;
+    /* 조금 더 직관적으로 너비와 높이를 명시할 수 있도록(패딩과 보더까지 합해서 위드와 하이트가 지정될 수 있도록 하기 위함) */
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1, h2, h3, p, ul{
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+button{
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+}
+
+button:focus{
+    outline: 1px solid var(--color-accent);
+}
