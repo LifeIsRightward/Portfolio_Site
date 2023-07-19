@@ -39,11 +39,11 @@
         <nav>
             <ul class="header__menu">
                 <li><a class="header__menu__item active" href="#home">Home</a></li>
-                <li><a class="header__menu__item active" href="#about">About</a></li>
-                <li><a class="header__menu__item active" href="#skills">Skills</a></li>
-                <li><a class="header__menu__item active" href="#work">My work</a></li>
-                <li><a class="header__menu__item active" href="#testimonial">Testimonials</a></li>
-                <li><a class="header__menu__item active" href="#contact">Contact</a></li>
+                <li><a class="header__menu__item" href="#about">About</a></li>
+                <li><a class="header__menu__item" href="#skills">Skills</a></li>
+                <li><a class="header__menu__item" href="#work">My work</a></li>
+                <li><a class="header__menu__item" href="#testimonial">Testimonials</a></li>
+                <li><a class="header__menu__item" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -51,10 +51,14 @@
     <main>
         <!-- Home -->
         <section id="home">
-            <img src="images/profile.jpg" alt="DaeHyun's profile">
-            <h2>Hello I&#39;m Dream Coder, DaeHyun</h2>
-            <p>Software Enginner residing in Seoul, Republic of South Korea</p>
-            <a href="#contact">Contaact Me</a>
+            <img class="home__avatar" src="images/profile.jpg" alt="DaeHyun's profile">
+            <h2 class="home__title">
+                Hello <br> I&#39;m 
+                <strong class="home__title--strong">Dream Coder</strong>
+                , DaeHyun
+            </h2>
+            <p class="home__description">Software Enginner residing in Seoul, Republic of South Korea</p>
+            <a class="home__contact" href="#contact">Contaact Me</a>
         </section>
         <!-- About -->
         <section id="about">

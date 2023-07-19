@@ -57,7 +57,7 @@ button:focus{
 
 /* Header */
 .header{
-    background-color: #fd6413;
+    background-color: #050a13;
     position: fixed;
     top: 0;
     width: 100%;
@@ -93,6 +93,7 @@ button:focus{
 
 .header__menu__item{
     padding: 8px 16px;
+    margin-left: 16px;
 }
 
 .header__menu__item:hover{
@@ -102,4 +103,52 @@ button:focus{
 .header__menu__item.active{
     border: 1px solid var(--color-accent);
     border-radius: 4px;
+}
+
+/* Home */
+#home{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 5rem 1rem;
+    padding-top: 7rem;
+    text-align: center;
+}
+
+.home__avatar{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    /* 이미지의 원래 비율이 유지됨. 위드와 하이트에 상관없이 유지됨 */
+    border: 3px solid var(--color-accent);
+    border-radius: 100%;
+}
+
+.home__title{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home__title--strong{
+    color: var(--color-accent);
+}
+
+.home__description{
+    font-size: 1.3rem;
+}
+
+.home__contact{
+    display: inline-block;
+    color: var(--color-black);
+    background-color: var(--color-accent);
+    padding: 0.5rem, 1rem;
+    margin: 2rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.home__contact:hover{
+    background-color: transparent;
+    color: var(--color-text);
+    outline: 2px solid var(--color-accent);
+    /* 보더로 하면 박스 사이징 속성때문에 버튼이 호버될때 컨텐츠들이 밀려나면서 안이뻐진다. -> 그래서 보더말고 아웃라인으로 해준거임 ㅇㅇ */
 }
