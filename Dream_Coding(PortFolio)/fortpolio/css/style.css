@@ -19,6 +19,9 @@
     --color-blue: #03e8f9;
     --color-orange: #fd6413;
     --color-gray: #1b1e26;
+
+    /* Size */
+    --size-max-width: 1200px;
 }
 
 *{
@@ -68,6 +71,11 @@ button:focus{
 .description{
     font-size: 1.5rem;
     margin: 0.5rem 0;
+}
+
+.max-container{
+    max-width: var(--size-max-width);
+    margin: auto;
 }
 
 /* Header */
@@ -166,4 +174,58 @@ button:focus{
     color: var(--color-text);
     outline: 2px solid var(--color-accent);
     /* 보더로 하면 박스 사이징 속성때문에 버튼이 호버될때 컨텐츠들이 밀려나면서 안이뻐진다. -> 그래서 보더말고 아웃라인으로 해준거임 ㅇㅇ */
+}
+
+/* About */
+.majors{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 2.5rem 0;
+}
+
+.major{
+    background-color: var(--color-primary-variant);
+    padding: 2rem 1rem;
+    color: var(--color-text);
+    border-radius: 1rem;
+    cursor: default;
+    box-shadow: 4.0px 8.0px 8.0px rgba(0,0,0,0.38);
+}
+
+.major__icon{
+    font-size: 4rem;
+    margin: 1rem 0;
+    color: var(--color-accent);
+    transition: all 350ms ease;
+}
+
+.major__title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.major:hover .major__icon{
+    transform: rotate(-15deg) scale(1.2);
+}
+
+.jobs{
+    text-align: start;
+}
+
+.jobs{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.job__name{
+    color: var(--color-primary);
+}
+
+.job__perioid{
+    color: var(--color-primary);
+    font-size: 0.8rem;
 }
