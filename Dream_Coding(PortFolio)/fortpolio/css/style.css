@@ -229,3 +229,50 @@ button:focus{
     color: var(--color-primary);
     font-size: 0.8rem;
 }
+
+/* Skills */
+/* skills라는 섹션을 아이디로 정해놨기에 아이디 선택자를 사용. */
+#skills{
+    background-color: var(--color-primary-variant);
+    color: var(--color-text);
+}
+
+.skills{
+    display: grid;
+    /* 넌 이제 그리드 박스야 */
+    grid-template-columns: 6fr 4fr;
+    /* 그리드는 총 2개의 행이 있는데, 각각 6배 4배로 반들어줄거임. */
+    margin: 2rem 3rem;
+    border-radius: 8px;
+    /* 보더 래디우스를 줘도 각져있다. 그 이유는  우리가 그리드라는 컨테이너 자체에는 
+    보더 래디우스가 적용되어있지만, 그 안에 들어있는 스킬즈 코딩(클래스) 자체가 백그라운드 색상이 프라이머리 색상으로 지정되어있어서 그리드 밖으로 삐져나와서 프라이머리 색상이 보이는거임.*/
+    overflow: hidden;
+    /* 그래서 스킬즈에게 보더 래디우스가 이건데, 혹시나 내 자식요소중에 내 컨테이너 밖으로 나온애가 있다면 보이지 않게 overflow: hiddend을 해준거임.*/
+
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+.skills__title{
+    color: var(--color-accent);
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.skills__coding{
+    grid-row: span 2;
+    padding: 1rem;
+    background-color: var(--color-primary);
+}
+
+.skills__tools{
+    padding: 1rem;
+}
+
+.skills__etc{
+    padding: 1rem;
+    background-color: var(--color-primary);
+    filter: brightness(150%);
+    /* 동일한 색깔을 쓰더라도 다르게 표현하고싶으면, 필터를 사용하면됨. 
+    필터 중에서도 조금 더 밝게 해주는 brightness를 사용했음. */
+    /* 웹 사이트에서 사용하는 코드를 많이 만들지 않더라도, 필터를 통해서 다른 느낌의 연출을 진행할 수 있음. */
+}
