@@ -80,7 +80,7 @@ button:focus{
 
 /* Header */
 .header{
-    background-color: #050a13;
+    background-color: transparent;
     position: fixed;
     top: 0;
     width: 100%;
@@ -91,6 +91,12 @@ button:focus{
     align-items: center;
     /* flex에서 기준축의 반대축(지금에서 반대축은 수직)에 대한 정렬 속성값은 정렬하는 방식에 따라 상이함. */
     z-index: 1;
+    transition: all 250ms ease;
+}
+
+.header--dark{
+    background-color: var(--color-primary);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .header__logo{
