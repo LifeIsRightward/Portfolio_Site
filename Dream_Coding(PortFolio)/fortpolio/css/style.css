@@ -354,4 +354,57 @@ button:focus{
     top: 0;
 }
 
-/* 왜 호버가 안먹을까,, */
+.projects{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 1배율로 4개의 컬럼을 만듦 */
+    grid-template-rows: repeat(2, 1fr);
+    /* 총 2 줄을 만들어주는데 1배율로 만듦 */
+    gap: 1rem;
+}
+
+.project{
+    position: relative;
+    /* 프로젝트__메타데이터의 앱솔루트가 기존 플로우를 빠져나와서 기준으로
+    삼아야하는 곳이 프로젝트기때문에 프로젝트의 포지션을 렐러티브로 해줌. */
+    border-radius: 8px;
+    overflow: hidden;
+    /* 안에들어있는 이미지가 삐져나오지 않도록 오버플로우 히든 처리 */
+}
+
+.project__img{
+    width: 100%;
+}
+
+.project__metadata{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 200ms ease-in;
+    transform: translateY(-10px);
+}
+
+.project__metadata:hover{
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.project__title::after{
+    content: ' ';
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0.5rem 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
