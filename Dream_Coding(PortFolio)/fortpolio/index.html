@@ -33,12 +33,13 @@
     
     <!-- Java Script -->
     <script type="module" src="src/main.js" defer></script>
-    <script type="module" src="src/projrcts.js" defer></script>
+    <script type="module" src="src/projects.js" defer></script>
         <!-- type="module" 이게 뭐냐면 각각의 js파일이 독립적으로 고립된 모듈화된다는거임.  -->
         <!-- 이걸 안쓴다면 main.js에 있는 전역변수들을 projects.js에서도 가져다 쓸 수 있는데 프로젝트의 볼륨이 커지면 커질수록 -->
         <!-- js 파일을 관리하기 쉽게하려면 각각 인디비쥬얼 하게 독립적으로 관리해주는것이 편함. 그래서 type 모듈을 써주는것이 좋음 -->
         <!-- 다시한번 말하지만 타입 모듈을 쓰면, main js 파일에 있는 전역변수를 projects js 파일에서 못쓰게됨. -->
-</head>
+    <script type="module" src="src/active_menu.js" defer></script>
+    </head>
 <body>
     
     <!-- Header -->

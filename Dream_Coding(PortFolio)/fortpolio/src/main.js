@@ -26,7 +26,7 @@ const headerHeight = header.getBoundingClientRect().height;
 document.addEventListener('scroll', ()=>{
     // console.log(window.scrollY);
     // 윈도우 객체안에서 스크롤될떄마다 이벤트가 발생하여서 Y좌표가 보임.
-    
+     
     if(window.scrollY > headerHeight){
         header.classList.add('header--dark');
     }else{

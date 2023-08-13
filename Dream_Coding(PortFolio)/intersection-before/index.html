@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersection Observer</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 80px auto;
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: deepskyblue;
+        transition: all 700ms;
+      }
+
+      .box.active {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+    <div class="box">16</div>
+    <div class="box">17</div>
+    <div class="box">18</div>
+    <div class="box">19</div>
+    <div class="box">20</div>
+
+    <script>
+      const observer = new IntersectionObserver(callback, options);
+      const options = {
+        // 루트에 적용할 수 있는 마진임. 부모컨테이너에 마진을 적용할 수 있음
+        // 옵저버로 관찰할 수 있는 영역을 늘리거나, 줄일때 그럴때 쓰는듯 함.
+        // 클라이언트가 볼 수 있는 영역 + 루트마진을 줘서 그 영역이 인터섹션옵저버로 관찰할 수 있는 범위가 됨.
+        // 루트 마진값을 음수(마이너스, -) 값을 주게된다면, 클라이언트가 보는 영역보다 더 적은 영역만을 인터섹션옵저버가 관찰함.
+        // 디폴트는 클라이언트의 뷰포트 크기만큼임.
+        rootMargin: '200px',
+        // 쓰레쉬홀드는 이제 몇% 진입했을때 알고싶다~ 이럴때 사용하는 옵션인듯 함. 원하는 지점을 명시하고싶을때 사용
+        // 0퍼, 25퍼, 50퍼 지점일때를 알고싶다는거
+        threshold: [0, 0.25, 0.5],
+      };
+      // IntersectionObserver를 사용하기 위해서는, 저 클래스의 인스턴스를(obsever)를 만들고
+      // 관찰할때마다 원하는 callback 함수를 지정해줌.
+      // options은 줘도 되고 안줘도 됨.
+      const boxes = document.querySelectorAll('.box');
+      boxes.forEach(box => {
+        observer.observe(box);
+      });
+
+      // entries 는 진입하거나 빠져나가는 요소들의 배열 -> 이게 기본 문법인듯 인터섹션옵져버의 ㅇㅇ
+      function callback(entries){
+        entries.forEach((entry) => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('active');
+          }else{
+            entry.target.classList.remove('active');
+          }
+          // console.log(entry);
+          // console.log(entry.target);
+          console.log(entry.isIntersecting);
+          console.log(entry.intersectionRatio);
+        });
+      }
+    </script>
+  </body>
+</html>

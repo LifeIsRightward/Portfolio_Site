@@ -1,5 +1,10 @@
 'use strict'
 
+// Intersection Observer API ->
+// 내가 관찰하고싶은 요소가 화면상에 보이는지, 이 가시성에 대한것을 관찰하고싶을 때 유용하게 사용함.
+
+
+
 // Project 필터링 관련 로직 처리
 const categories = document.querySelector('.categories');
 const projects = document.querySelectorAll('.project');
