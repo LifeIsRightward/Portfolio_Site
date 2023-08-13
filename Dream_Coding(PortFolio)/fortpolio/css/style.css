@@ -381,6 +381,12 @@ button:focus{
     grid-template-rows: repeat(2, 1fr);
     /* 총 2 줄을 만들어주는데 1배율로 만듦 */
     gap: 1rem;
+    transition: all 250ms ease-out;
+}
+
+.projects.anim-out{
+    opacity: 0;
+    transform: scale(0.96) translateY(20px);
 }
 
 .project{

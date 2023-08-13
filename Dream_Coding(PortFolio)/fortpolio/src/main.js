@@ -10,7 +10,7 @@
 // querySelector -> 내가 선택하고싶은 선택자를 문자열로 제공하면됨(파라미터로).
 // 아이디면 #~ 클래스면 .~ 일반태그면 일반태그 - 이렇게 파라미터로 주면됨.
 //document는 무었이냐? -> 문서 전체에대한 정보를 가지고있는 객체.
-// window 라는 객체 안에 documnet 에 querySelector가 있음
+// window 라는 객체 안에 documnet 에 querySelector가 있음   
 //window는 무었이냐? -> 브라우저에서 (기본으로)제공해주는 객체. 글로벌 객체
 const header =  document.querySelector('.header');
 // 이러면 header 안에 JS에서 접근이 가능한 형태로 객체가 반환되어있음.
@@ -24,7 +24,7 @@ const headerHeight = header.getBoundingClientRect().height;
 
 //스크롤 되는 y좌표가 headerHeight 보다 크다면 다른 스타일링..
 document.addEventListener('scroll', ()=>{
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     // 윈도우 객체안에서 스크롤될떄마다 이벤트가 발생하여서 Y좌표가 보임.
     
     if(window.scrollY > headerHeight){
@@ -38,7 +38,7 @@ document.addEventListener('scroll', ()=>{
 const home = document.querySelector('.home__container');
 const homeHeight = home.offsetHeight;
 document.addEventListener('scroll', ()=>{
-    console.log(1 - (window.scrollY / homeHeight));
+    // console.log(1 - (window.scrollY / homeHeight));
     home.style.opacity = 1 - (window.scrollY / homeHeight);
 });
 
