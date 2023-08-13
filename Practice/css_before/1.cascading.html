@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cascading</title>
+    <style>
+      /* 선택자의 우선순위를 보기위한 예제 
+         구체적이면 구체적일수록 더욱 더 우선순위가 높음
+         밑에서 보면 button(태그 선택자), .special(클래스 선택자), #primart(아이디 선택자) 이렇게 3가지의 선택자에 스타일을 집어넣어봤다.
+         라이브 서버를 실행시켜서 확인해보기 바란다.*/
+      button{
+        background-color: aqua;
+        color: #fff;
+        font-size: large;
+      }
+      /* 태그 선택자 */
+
+      .special{
+        background-color: blue;
+        font-size: medium;
+      }
+      /* 클래스 선택자 */
+
+      #primary{
+        width: 100px;
+        background-color: brown;
+        font-size: small;
+      }
+      /* 아이디 선택자 */
+
+      .special{
+        background-color: deeppink;
+      }
+      /* 동일한 레벨의 선택자가 존재할때, 더 나중에 정의된 스타일이 적용된다는걸 보여주기위한 부분임. 
+         아렇게되면 전에 백그라운드 컬러가 블루였는데 폰트 사이즈는 그대로 미디움으로 적용되지만, 컬러는 딥 핑크로 바뀌게 된다.*/
+    </style>
+  </head>
+  <body>
+    <h1>Cascading을 확인하는 버튼들</h1>
+    <button>태그 버튼</button>
+    <button class="special">클래스 버튼</button>
+    <button class="special">클래스 버튼</button>
+    <button class="special" id="primary">클래스+아이디 버튼</button>
+  </body>
+</html>

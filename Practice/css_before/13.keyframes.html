@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyframes</title>
+    <style>
+      /* css에서 키프레임을 사용하면, 조금더 정교한 애니메이션을 정의할 수 있음 */
+      @keyframes slidein{
+        0%{
+          border-radius: 0%;
+          background-color: aquamarine;
+        }
+        /* 애니메이션이 시작할때 */
+        50%{
+          background-color: pink;
+        }
+        /* 애니메이션 중간때 */
+        100%{
+          border-radius: 100%;
+          background-color: hotpink;
+        }
+        /* 애니메이션이 끝날때 */
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background-color: chocolate;
+        animation: 1500ms infinite alternate slidein;
+        /* animation -> 이게 키프레임을 사용하기위한 속성. 몇 초동안, 내가 정의한 키프레임(애니메이션) 이런식으로
+        만약 무한정으로 지속하고싶다면 infinite속성 사용 */
+        /* alternate는 원래는 0% -> 50% -> 100% 하고 다시 0% -> 50% -> 100% 이렇게 하는데(infinite 속성 때문에)
+        (이렇게 되면 마지막에 0%로 돌아올때 부자연스러워짐.)
+        그런데 alternate를 사용하면, 0% -> 50% -> 100% -> 50% -> 0%로 자연스럽게 돌아가도록 설정해준다. */
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Align</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 100px;
+        background-color: grey;
+        text-align: center;
+        /* 이름이 텍스트 얼라인이라 텍스트만 정렬할거 같지만, 부모 컨테이너 안에 들어있는 인라인 요소들을 정렬할때도 사용함. */
+        /* 결론적으로 인라인 레벨의 좌 우 정렬을 하고싶으면, text-align: center;로 하면된다. */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>text-align: center</h1>
+    <div class="box">
+      <button>Text</button>
+      <!-- button이 inline 요소임. -->
+    </div>
+  </body>
+</html>
