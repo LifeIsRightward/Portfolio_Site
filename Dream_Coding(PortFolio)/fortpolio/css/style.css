@@ -55,7 +55,7 @@ button{
 }
 
 button:focus{
-    outline: 1px solid var(--color-accent);
+    outline: 1px solid transparent;
 }
 /* Common(재사용 목적 css, 흐름이 비슷한 것들한테는 공통적인 스타일링을 해줌.) */
 .section{
@@ -116,14 +116,28 @@ button:focus{
     /* rem은 상대적인 유닛. 현재 브라우저에 설정되어있는 폰트 사이즈에 1.8배임 */
 }
 
+.header__toggle{
+    display: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+}
+
 .header__menu{
     display: flex;
     gap: 4px;
 }
 
 .header__menu__item{
+    display: block;
     padding: 8px 16px;
-    margin-left: 16px;
+    /* margin-left: 16px; */
+    border-bottom: 2px solid transparent;
+    /* 기본상태에서는 투명하게 있음. -> 부모와 색상을 동일하게 만듦 */
+    /* 이걸 왜 해줬냐면 호버되면 밀려서. 미리 그냥 보더 바텀을 줌 */
+
 }
 
 .header__menu__item:hover{
@@ -496,7 +510,7 @@ button:focus{
 /* 반응형 */
 @media screen and (max-width: 768px) {
     .section{
-        padding: 3rem 2rem;
+        padding: 4rem 2rem;
     }
 
     .title{
@@ -510,14 +524,25 @@ button:focus{
     .header{
         flex-direction: column;
         align-items: start;
+        background-color: var(--color-primary);
+    }
+
+    .header__toggle{
+        display: block;
     }
 
     .header__menu{
+        display: none;
         flex-direction: column;
         text-align: center;
         padding: 1rem 4rem;
         gap: 1rem;
     }
+
+    .header__menu.open{
+        display: flex;
+    }
+    /* header__menu 와 open 이라는 클래스가 동시에 있을때, 선택됨. */
 
     .header__nav{
         width: 100%;
