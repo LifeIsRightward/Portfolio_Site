@@ -23,8 +23,13 @@ const navItems = sectionIds.map((id) =>
 
 const visibleSections = sectionIds.map(()=>false);
 // 다수의 섹션이 동시에 보여진다면, 가장 첫번째 섹션을 선택. 이 조건을 위한 배열임.
+// 그리고 현재 보여지고있는 섹션이 어떤건지를 체크하는 용도가 메인용도임. 
+let activeNavItem = navItems[0];
 
-const options = {};
+const options = {
+    rootMargin: '-20% 0px 0px 0px',
+    threshold: [0, 0.96],
+};
 const observer = new IntersectionObserver(observerCallback, options);
 sections.forEach((section) => observer.observe(section));
 
@@ -37,19 +42,32 @@ function observerCallback(entries){
         selectLastOne = 
             index === sectionIds.length - 1 &&
             entry.isIntersecting && 
-            entry.intersectionRatio >= 0.99;
+            entry.intersectionRatio >= 0.92;
     });
-    console.log(visibleSections);
-    console.log(`무조건 라스트 섹션!!`, selectLastOne);
 
     const navIndex = 
         selectLastOne ? 
         sectionIds.length - 1 :
         findFirstIntersecting(visibleSections);
-        console.log(sectionIds[navIndex]);
+        
+    selectNavItem(navIndex);
 }
 
+// 섹션들 배열중에서 보여지는걸 체크하는 배열이 있는데 그게 'visibleSections'이고
+// 비지블섹션즈 중에서 가장 첫번째에 있는 트루의 인덱스를 반환한다.
+// 근데 0보다 크면 그 인덱스를 반환하면되는데, 트루가 없으면 -1을 반환해서 그냥 -1은 뭔가 결함이 생겨버릴거 같으니 0으로 전달한다고 함.
 function findFirstIntersecting(intersections){
     const index = intersections.indexOf(true);
     return index >= 0 ? index : 0;
+}
+
+// navbar 중에서 어떤게 현재 섹션에서 보여지고, 선택됬는지를 알고, 클래스리스트로 처리.
+function selectNavItem(index){
+    const navItem = navItems[index];
+    if(!navItem){
+        return;
+    }
+    activeNavItem.classList.remove('active');
+    activeNavItem = navItem;
+    activeNavItem.classList.add('active');
 }

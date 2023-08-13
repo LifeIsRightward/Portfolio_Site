@@ -29,6 +29,11 @@
     /* 조금 더 직관적으로 너비와 높이를 명시할 수 있도록(패딩과 보더까지 합해서 위드와 하이트가 지정될 수 있도록 하기 위함) */
 }
 
+html{
+    scroll-behavior: smooth;
+    /* 스크롤될때 부드러운 효과를 줄 때 사용한다고 함. */
+}
+
 body{
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
