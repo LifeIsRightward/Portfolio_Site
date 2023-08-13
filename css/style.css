@@ -189,7 +189,7 @@ button:focus{
     display: inline-block;
     color: var(--color-black);
     background-color: var(--color-accent);
-    padding: 0.5rem, 1rem;
+    padding: 0.5rem 1rem;
     margin: 2rem;
     font-weight: bold;
     border-radius: 4px;
