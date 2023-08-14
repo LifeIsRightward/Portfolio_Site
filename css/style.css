@@ -20,8 +20,19 @@
     --color-orange: #fd6413;
     --color-gray: #1b1e26;
 
+    /* Background-grediant */
+    --home-bg-gradient: linear-gradient(180deg, rgba(8,26,60,1) 0%, rgba(5,10,19,1) 100%);
+    
+    /* Backgroud-svg */
+    --home-bg-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='627' height='627' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%231B1E26' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23015258'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    
     /* Size */
     --size-max-width: 1200px;
+
+    /* Divider */
+    --divider-single-wave: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path></svg>');
+    --divider-multi-wave: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path> <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path> <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path></svg>');
+    --divider-arrow: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z"></path> </svg>');  
 }
 
 *{
@@ -156,12 +167,34 @@ button:focus{
 
 /* Home */
 #home{
+    position: relative;
     background-color: var(--color-primary);
+    background-image: var(--home-bg-svg);
+    /* background: var(--home-bg-gradient); */
     color: var(--color-text);
     padding: 5rem 1rem;
     padding-top: 7rem;
     text-align: center;
 }
+
+#home::after{
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: calc(119% + 1.3px);
+   height: 62px;
+   overflow: hidden;
+   line-height: 0;
+   transform: rotate(180deg);
+   background-color: var(--color-white);
+   mask: var(--divider-single-wave);
+   -webkit-mask: var(--divider-single-wave);
+}
+
+/* 디바이더 CSS 설정 시작 */
+
+/* 디바이더 설정 CSS 끝 */
 
 .home__avatar{
     width: 250px;
@@ -259,9 +292,28 @@ button:focus{
 /* Skills */
 /* skills라는 섹션을 아이디로 정해놨기에 아이디 선택자를 사용. */
 #skills{
+    position: relative;
     background-color: var(--color-primary-variant);
     color: var(--color-text);
 }
+
+#skills::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(120% + 1.3px);
+    height: 106px;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    background-color: var(--color-primary);
+    mask: var(--divider-multi-wave);
+    -webkit-mask: var(--divider-multi-wave);
+}
+
+/* skills 디바이더 시작 */
+/* skills 디바이더 끝 */
 
 .skills{
     display: grid;
@@ -498,9 +550,38 @@ button:focus{
 
 /* Footer */
 #contact{
+    position: relative;
     background-color: var(--color-primary);
     color: var(--color-text);
 }
+
+/* contact 디바이더 시작*/
+#contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 1.3px);
+    height: 105px;
+    overflow: hidden;
+    line-height: 0;
+    background-color: var(--color-white);
+    mask: var(--divider-arrow);
+    -webkit-mask: var(--divider-arrow);
+
+}
+
+.contact__divider svg {
+    position: relative;
+    display: block;
+    
+}
+
+.contact__divider .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* contact 디바이더 끝 */
 
 .contact__links{
     display: flex;

@@ -28,6 +28,9 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/86c243af6d.js" crossorigin="anonymous"></script>
     
+    <!-- TypeIt JS -->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+      
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     
@@ -39,6 +42,7 @@
         <!-- js 파일을 관리하기 쉽게하려면 각각 인디비쥬얼 하게 독립적으로 관리해주는것이 편함. 그래서 type 모듈을 써주는것이 좋음 -->
         <!-- 다시한번 말하지만 타입 모듈을 쓰면, main js 파일에 있는 전역변수를 projects js 파일에서 못쓰게됨. -->
     <script type="module" src="src/active_menu.js" defer></script>
+    <script type="module" src="src/type.js" defer></script>
     </head>
 <body>
     
@@ -73,7 +77,7 @@
             섹션이라는 클래스명으로 묶어놓음. -->
             <div class="home__container">
                 <img class="home__avatar" src="images/profile.jpg" alt="DaeHyun's profile">
-                <h2 class="home__title">
+                <h2 class="home__title" aria-label="Hello, I'M Dream Coder DaeHyun">
                     Hello <br> I&#39;m 
                     <strong class="home__title--strong">Dream Coder</strong>
                     , DaeHyun
@@ -197,6 +201,9 @@
                     </section>
                 </div>
             </div>
+            <!-- skills 디바이더 HTML -->
+
+    
         </section>
         
         <!-- Work -->
@@ -332,6 +339,8 @@
 
     <!-- Footer -->
     <footer id="contact" class="section">
+        <!-- contact 디바이더 HTML -->
+
         <div class="max-container">
             <h2 class="title">Let&#39;s talk</h2>
             <p class="description">rlaeogus9269@naver.com</p>
