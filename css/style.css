@@ -273,6 +273,12 @@ button:focus{
     text-align: start;
 }
 
+/* 용문고마크 크기수정 */
+.job > img{
+    width: 160px;
+    height: 160px;
+}
+
 .jobs{
     display: flex;
     align-items: center;
