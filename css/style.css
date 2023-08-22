@@ -5,11 +5,14 @@
     /* 색깔보다 한 단계 더 추상적으로 사용하는 색깔들인거암. 웹의 전반적인 색깔을 담당하는
     primary, 강조할때 사용하는 accent, 그리고 텍스트의 색깔인 text까지 이렇게 내가 CSS내에서
     사용하는 색깔조차도 나중에 변수로 만들어서 사용가능하다는것이다. */
-    --color-primary: var(--color-black);
-    --color-primary-variant: var(--color-gray);
+    --color-primary: var(--color-firstgreen);
+    --color-primary-variant: var(--color-secondgreen);
+    --color-primary-secondvariant: var(--color-thirdgreen);
+    
     /* 주로 사용하는 프라이머리 색상에 대한 변형을 하나 더 정의.(프라이머리 하나만 사용하면 밋밋하니까~) */
-    --color-accent: var(--color-blue);
+    --color-accent: var(--color-thirdbrown);
     --color-accent-variant: var(--color-orange);
+    
     /* 얘도 같은 의미에서 베리언트를 설정해줌. 액센트 색깔 하나만 사용하면 밋밋하니까 ㅇㅇ */
     --color-text: var(--color-white);
     
@@ -19,6 +22,22 @@
     --color-blue: #03e8f9;
     --color-orange: #fd6413;
     --color-gray: #1b1e26;
+    --color-peach: #E19898;
+    --color-lighterpurple: #a693e7;
+    --color-lightpurple: #A2678A;
+    --color-purple: #614bc3;
+    --color-pink: #FF6969;
+
+    /* Color match(SET) */
+    --color-firstgreen: #435334;
+    --color-secondgreen: #9eb384;
+    --color-thirdgreen: #cedebd;
+    --color-fourthbeige: #faf1e4;
+
+    /* Color match(SET) */
+    --color-firstbrown: #594545;
+    --color-secondbrown: #815B5B;
+    --color-thirdbrown: #9E7676;
 
     /* Background-grediant */
     --home-bg-gradient: linear-gradient(180deg, rgba(8,26,60,1) 0%, rgba(5,10,19,1) 100%);
@@ -41,13 +60,18 @@
 }
 
 html{
+    width: 100%;
     scroll-behavior: smooth;
     /* 스크롤될때 부드러운 효과를 줄 때 사용한다고 함. */
 }
 
 body{
+    /* width: 100%; */
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
+    overflow-x: hidden;
+    /* 이거 우측에 흰색 공백 생기는거 막기위해서 해놓음. */
+
 }
 
 h1, h2, h3, p, ul{
@@ -99,7 +123,7 @@ button:focus{
     background-color: transparent;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100%;    
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -245,6 +269,8 @@ button:focus{
 
 .major{
     background-color: var(--color-primary-variant);
+    width: 30rem;
+    height: auto;
     padding: 2rem 1rem;
     color: var(--color-text);
     border-radius: 1rem;
@@ -308,7 +334,7 @@ button:focus{
     position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(120% + 1.3px);
+    width: 100%;
     height: 106px;
     overflow: hidden;
     line-height: 0;
